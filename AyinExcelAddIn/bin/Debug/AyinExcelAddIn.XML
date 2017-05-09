@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doc>
+<assembly><name>AyinExcelAddIn</name></assembly>
+<members>
+<member name="M:ExcelDna.XlUtils.toExcelValue(System.Object)">
+<summary>
+ Convert an value to a value Excel can understand. Date values are converted into strings.
+</summary>
+</member>
+<member name="M:ExcelDna.XlUtils.toExcelValueOpt``1(Microsoft.FSharp.Core.FSharpOption{``0})">
+<summary>
+ Convert an optional value to a value Excel can understand.
+</summary>
+</member>
+<member name="M:ExcelDna.XlCache.asyncRunAndResize``2(System.String,Microsoft.FSharp.Core.FSharpFunc{``0,``1},``0)">
+
+</member>
+<member name="M:ExcelDna.XlCache.asyncRun``2(System.String,Microsoft.FSharp.Core.FSharpFunc{``0,``1},``0)">
+
+</member>
+<member name="M:ExcelDna.XlCache.asyncRegister``2(System.String,Microsoft.FSharp.Core.FSharpFunc{``0,``1},``0)">
+
+</member>
+<member name="M:ExcelDna.ArrayResizer.Resize(System.Object[0:,0:])">
+<summary>
+ Resizes array output of Excel UDFs
+</summary>
+</member>
+<member name="M:ExcelDna.ExcelAsyncUtil.excelObserve``2(System.String,``0,System.IObservable{``1})">
+<summary>
+ A helper to pass an F# IObservable to Excel-DNA
+</summary>
+</member>
+<member name="M:ExcelDna.ExcelAsyncUtil.excelRunAsync``2(System.String,``0,Microsoft.FSharp.Control.FSharpAsync{``1})">
+<summary>
+ A helper to pass an F# Async computation to Excel-DNA
+</summary>
+</member>
+<member name="T:AyinExcelAddIn.AyinRibbon">
+<summary>
+ CustomUI Ribbon class that uses ribbon XML included in the .dna file
+</summary>
+</member>
+<member name="M:AyinExcelAddIn.Utils.transpose``1(``0[0:,0:])">
+<summary>
+ Transposes a 2-dimensional array
+</summary>
+</member>
+<member name="M:AyinExcelAddIn.Utils.toDate(System.Int32)">
+<summary>
+ Converts an integer yyyymm value to a DateTime value.
+</summary>
+</member>
+<member name="M:AyinExcelAddIn.Utils.toYYYYMM(System.DateTime)">
+<summary>
+ Converts a DateTime value to an integer yyyymm value.
+</summary>
+</member>
+<member name="T:AyinExcelAddIn.Business.Tranche">
+
+</member>
+<member name="T:AyinExcelAddIn.Business.Deal">
+
+</member>
+<member name="T:AyinExcelAddIn.Business.Bond">
+
+</member>
+<member name="M:AyinExcelAddIn.BondFunctions.bondCollat(System.String)">
+
+</member>
+<member name="M:AyinExcelAddIn.BondFunctions.bondGroups(System.String)">
+
+</member>
+<member name="M:AyinExcelAddIn.BondFunctions.origSize(System.String)">
+
+</member>
+<member name="M:AyinExcelAddIn.BondFunctions.bondCusip(System.String)">
+
+</member>
+<member name="M:AyinExcelAddIn.BondFunctions.bbrDeal(System.String)">
+
+</member>
+<member name="M:AyinExcelAddIn.BondFunctions.intexDeal(System.String)">
+
+</member>
+<member name="M:AyinExcelAddIn.BondFunctions.bbrSymbol(System.String)">
+
+</member>
+<member name="M:AyinExcelAddIn.DealGrp.dealGrpDP(System.String,System.String)">
+<summary>
+ Returns the most recent RBS First Look data point for the
+ specified tag and id.
+</summary>
+</member>
+<member name="M:AyinExcelAddIn.DealGrp.dealGrpH(System.String,System.String,System.DateTime,System.DateTime)">
+
+</member>
+<member name="M:AyinExcelAddIn.DealGrp.toHistoryFunc``2(Microsoft.FSharp.Core.FSharpFunc{``0,Microsoft.FSharp.Collections.FSharpList{System.Tuple{System.DateTime,Microsoft.FSharp.Core.FSharpOption{``1}}}},Microsoft.FSharp.Collections.FSharpMap{System.String,System.String},``0)">
+<summary>
+ Transforms a functions that returns historical data points to a function
+ that returns the same data points taking into account the specified options, and
+ in an Excel ingestible obj[,] array2D.
+</summary>
+</member>
+<member name="M:AyinExcelAddIn.DealGrp.histDataCmpr``2(System.String,System.String,``0,``1,``0,``1)">
+<summary>
+ Comparator for comparing historical data points - (date, value).
+</summary>
+</member>
+<member name="M:AyinExcelAddIn.DealGrp.parseOptArgs(System.String)">
+<summary>
+ Parse the user supplied options. The defaults will be overwritten by these.
+</summary>
+</member>
+<member name="P:AyinExcelAddIn.DealGrp.defaultOpts">
+<summary>
+ The default options for history functions.
+</summary>
+</member>
+<member name="M:AyinExcelAddIn.Backoffice.Quote.mostRecentQuote(AyinExcelAddIn.Backoffice.Security.T,AyinExcelAddIn.Backoffice.Broker.T,System.DateTime,System.DateTime)">
+ <summary>
+ Returns the most quote for the security and broker that is on or before the specified date.
+ </summary>
+</member>
+<member name="M:AyinExcelAddIn.Backoffice.Quote.quotesByBroker(AyinExcelAddIn.Backoffice.Broker.T,System.DateTime,System.DateTime,AyinExcelAddIn.Backoffice.Security.T)">
+ <summary>
+ Returns the quotes for the security and broker for the specified interval.
+ </summary>
+</member>
+<member name="M:AyinExcelAddIn.Backoffice.Quote.quotes(System.DateTime,System.DateTime,AyinExcelAddIn.Backoffice.Security.T)">
+ <summary>
+ Returns the quotes for the security for the specified interval.
+ </summary>
+</member>
+<member name="M:AyinExcelAddIn.Backoffice.Broker.quotingBrokers(AyinExcelAddIn.Backoffice.Security.T)">
+
+</member>
+<member name="P:AyinExcelAddIn.Backoffice.Broker.allBrokers">
+
+</member>
+<member name="T:AyinExcelAddIn.Backoffice.Position.T">
+
+</member>
+<member name="M:AyinExcelAddIn.Backoffice.Position.getPositions(System.DateTime)">
+
+</member>
+<member name="T:AyinExcelAddIn.Backoffice.Trade.T">
+
+</member>
+<member name="T:AyinExcelAddIn.Backoffice.Trade.TradeType">
+
+</member>
+<member name="M:AyinExcelAddIn.Backoffice.Trade.getTradesByDate(System.DateTime,System.DateTime)">
+
+</member>
+<member name="M:AyinExcelAddIn.Backoffice.Trade.getSecurityTrades(System.String)">
+
+</member>
+<member name="M:AyinExcelAddIn.Backoffice.Trade.create(FSharp.Data.Sql.Common.SqlEntity)">
+
+</member>
+<member name="M:AyinExcelAddIn.Backoffice.Trade.createS(AyinExcelAddIn.Backoffice.Security.T,FSharp.Data.Sql.Common.SqlEntity)">
+
+</member>
+<member name="M:AyinExcelAddIn.Backoffice.Trade.toTradeType(System.String)">
+
+</member>
+<member name="T:AyinExcelAddIn.Backoffice.Security.T">
+
+</member>
+<member name="T:AyinExcelAddIn.Backoffice.Security.SecurityId">
+
+</member>
+<member name="T:AyinExcelAddIn.Backoffice.Security.SecurityType">
+
+</member>
+<member name="P:AyinExcelAddIn.Backoffice.Security.allSecurities">
+
+</member>
+<member name="M:AyinExcelAddIn.Backoffice.Security.getSecurity(System.String)">
+
+</member>
+<member name="M:AyinExcelAddIn.Backoffice.Security.getSecurityById(System.Int32)">
+
+</member>
+<member name="M:AyinExcelAddIn.Backoffice.Security.create(FSharp.Data.Sql.Common.SqlEntity)">
+
+</member>
+<member name="M:AyinExcelAddIn.Backoffice.Security.toSecurityType(System.String)">
+
+</member>
+<member name="M:AyinExcelAddIn.Backoffice.Security.secid(AyinExcelAddIn.Backoffice.Security.T)">
+
+</member>
+<member name="T:AyinExcelAddIn.Backoffice.QuoteFunctions.QuoteForm">
+
+</member>
+<member name="M:AyinExcelAddIn.Backoffice.QuoteFunctions.modifyQuote(System.Int32)">
+
+</member>
+<member name="M:AyinExcelAddIn.Backoffice.QuoteFunctions.enterQuote">
+
+</member>
+<member name="M:AyinExcelAddIn.Backoffice.QuoteFunctions.BondQuoteReport">
+
+</member>
+<member name="M:AyinExcelAddIn.Backoffice.QuoteFunctions.MonthlyQuoteReport">
+
+</member>
+<member name="M:AyinExcelAddIn.Backoffice.QuoteFunctions.monthlyQuoteReport(NetOffice.ExcelApi.Application,NetOffice.ExcelApi.Worksheet,System.DateTime)">
+
+</member>
+<member name="M:AyinExcelAddIn.Backoffice.QuoteFunctions.renderQuote(NetOffice.ExcelApi.Worksheet,NetOffice.ExcelApi.Range,AyinExcelAddIn.Backoffice.Quote.T)">
+
+</member>
+<member name="M:AyinExcelAddIn.Backoffice.QuoteFunctions.aggrBondQuote(System.String,System.DateTime)">
+
+</member>
+<member name="M:AyinExcelAddIn.Backoffice.QuoteFunctions.monthlyBondQuote(System.String,System.String,System.DateTime)">
+
+</member>
+<member name="P:AyinExcelAddIn.Backoffice.QuoteFunctions.idcBroker">
+
+</member>
+<member name="T:AyinExcelAddIn.Backoffice.BrokerFunctions.BondBrokerForm">
+
+</member>
+<member name="M:AyinExcelAddIn.Backoffice.BrokerFunctions.bondBrokersDialog``1(``0)">
+
+</member>
+<member name="M:AyinExcelAddIn.Backoffice.BrokerFunctions.brokersDialog">
+
+</member>
+<member name="M:AyinExcelAddIn.RibbonFunctions.PaladyneReports.positionReport(NetOffice.ExcelApi.Application,NetOffice.ExcelApi.Worksheet,System.DateTime,Microsoft.FSharp.Core.FSharpOption{Microsoft.FSharp.Collections.FSharpList{AyinExcelAddIn.Backoffice.Position.T}})">
+
+</member>
+<member name="P:AyinExcelAddIn.RibbonFunctions.PaladyneReports.positionHdrs">
+
+</member>
+<member name="M:AyinExcelAddIn.RibbonFunctions.PaladyneReports.BlotterReport">
+
+</member>
+<member name="M:AyinExcelAddIn.RibbonFunctions.PaladyneReports.SecurityTrades">
+
+</member>
+<member name="M:AyinExcelAddIn.RibbonFunctions.PaladyneReports.renderTrades(NetOffice.ExcelApi.Application,NetOffice.ExcelApi.Worksheet,Microsoft.FSharp.Collections.FSharpList{AyinExcelAddIn.Backoffice.Trade.T},System.Boolean)">
+
+</member>
+<member name="M:AyinExcelAddIn.RibbonFunctions.PaladyneReports.formatOptDecimal``1(Microsoft.FSharp.Core.FSharpOption{``0})">
+
+</member>
+<member name="P:AyinExcelAddIn.RibbonFunctions.PaladyneReports.tradeHdrs">
+
+</member>
+<member name="M:AyinExcelAddIn.Udf.idh(System.String,System.String,System.Object,System.Object,System.Object)">
+<summary>
+ IDH
+
+</summary>
+</member>
+<member name="M:AyinExcelAddIn.Udf.idp(System.String,System.String)">
+<summary>
+ IDP
+
+</summary>
+</member>
+<member name="M:AyinExcelAddIn.Udf.parseQuote(System.String)">
+<summary>
+ TOQUOTE
+
+</summary>
+</member>
+<member name="M:AyinExcelAddIn.Udf.aggrquote(System.String,System.Object)">
+<summary>
+ BONDMARK
+
+</summary>
+</member>
+<member name="M:AyinExcelAddIn.Udf.brokerquote(System.String,System.String,System.DateTime)">
+<summary>
+ BROKERQUOTE
+
+</summary>
+</member>
+</members>
+</doc>

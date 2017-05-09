@@ -1,0 +1,158 @@
+<DnaLibrary Name="Ayin Excel Add-In" RuntimeVersion="v4.0">
+  <ExternalLibrary Path="AyinExcelAddIn.dll" ExplicitExports="true" />
+
+  <!--
+  <Reference Path="ExcelApi.dll" Pack="true" />
+  <Reference Path="FSharpx.Extras.dll" Pack="true" />
+  <Reference Path="FSharpx.Async.dll" Pack="true" />
+  <Reference Path="FSharpx.Collections.dll" Pack="true" />
+  <Reference Path="MathNet.Numerics.dll" Pack="true" />
+  <Reference Path="NetOffice.dll" Pack="true" />
+  <Reference Path="FSharp.Data.SqlProvider.dll" Pack="true" />
+  <Reference Path="Npgsql.dll" Pack="true" />
+  <Reference Path="OfficeApi.dll" Pack="true" />
+  <Reference Path="VBIDEApi.dll" Pack="true" />
+  -->
+  <Image Name="QuotesIcon" Path="QuotesIcon.png" Pack="false" />
+  <Image Name="BrokersIcon" Path="BrokersIcon.png" Pack="false" />
+  <Image Name="TradesIcon" Path="TradesIcon.png" Pack="false" />
+  <Image Name="PositionsIcon" Path="PositionsIcon.png" Pack="false" />
+  <Image Name="TearSheetIcon" Path="TearSheetIcon.png" Pack="false" />
+  <Image Name="HelpIcon" Path="HelpIcon.png" Pack="false" />
+  <Image Name="RefreshIcon" Path="RefreshIcon.png" Pack="false" />
+
+  <CustomUI>
+    <customUI xmlns="http://schemas.microsoft.com/office/2006/01/customui" loadImage='LoadImage'>
+      <ribbon>
+        <tabs>
+          <tab
+            id="AyinTab"
+            label="AYIN">
+
+            <group
+              id="BackOfficeGroup"
+              label="Back Office">
+
+              <splitButton
+                id="QuotesSplit"
+                size="large">
+
+                <button
+                    id="QuotesButton"
+                    label="Quotes"
+                    image="QuotesIcon"/>
+                <menu
+                    id="QuotesMenu"
+                    label="Quotes">
+                  <button
+                    id="BondQuotes"
+                    label="Bond Quotes"
+                    onAction="BondQuotes"/>
+                  <button
+                    id="MonthlyQuotes"
+                    label="Monthly Quote Report"
+                    onAction="MonthlyQuoteReport"/>
+                  <button
+                    id="YTDQuotes"
+                    label="YTD Quote Report"
+                    onAction="YtdQuotes"/>
+                  <button
+                    id="EnterQuotes"
+                    label="Enter Quote"
+                    onAction="EnterQuote"/>
+                </menu>
+              </splitButton>
+
+
+              <splitButton
+                  id="BrokersSplit"
+                  size="large">
+
+                <button
+                    id="BrokersButton"
+                    label="Brokers"
+                    image="BrokersIcon"/>
+                <menu
+                    id="BrokersMenu"
+                    label="Brokers">
+                  <button
+                      id="BrokerInfo"
+                      label="Broker Info"
+                      screentip="Information on brokers"
+                      onAction="BrokersDialog"/>
+                  <button
+                      id="QuotingBrokers"
+                      label="Quoting Brokers"
+                      screentip="Assign default brokers to bonds"
+                      onAction="BondBrokers"/>
+                </menu>
+              </splitButton>
+
+              <splitButton
+                id="TradesSplit"
+                size="large">
+                <button
+                  id="TradesButton"
+                  label="Trades"
+                  screentip="Trades"
+                  image="TradesIcon"/>
+                <menu
+                  id="TradesMenu"
+                  label="Trades">
+                  <button
+                    id="SecurityTrades"
+                    label="Security Trades"
+                    onAction="SecurityTrades"/>
+                  <button
+                    id="Blotter"
+                    label="Blotter Report"
+                    onAction="BlotterReport"/>
+                </menu>
+              </splitButton>
+
+              <button
+                id="Positions"
+                screentip="Positions"
+                size="large"
+                label="Positions"
+                image="PositionsIcon"
+                onAction="PositionReport"/>
+            </group>
+
+            <group
+              id="ResearchGroup"
+              label="Research"
+              visible="true">
+              <button
+                id="BondTearSheet"
+                screentip="Bond Tear Sheet"
+                size="large"
+                label="Tear Sheet"
+                image="TearSheetIcon"
+                onAction="BondTearSheet"/>
+            </group>
+            <group
+              id="OtherGroup">
+              <button
+                id="Refresh"
+                screentip="Refresh Active Worksheet"
+                size="large"
+                label="Refresh"
+                image="RefreshIcon"
+                onAction="RefreshSheet"/>
+              <button
+                id="Help"
+                screentip="Help"
+                size="large"
+                label="About"
+                image="HelpIcon"
+                onAction="Help"/>
+            </group>
+          </tab>
+        </tabs>
+      </ribbon>
+    </customUI>
+  </CustomUI>
+
+</DnaLibrary>
+
